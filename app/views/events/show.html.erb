@@ -1,0 +1,51 @@
+<div class="container">
+
+    <section class="user_info">
+      <div class="Event-creator">
+        <h4>Event créé par <%= link_to(@event.creator.name.capitalize, user_path(@event.creator.id))%></h4>
+      </div>
+      <h1><%= @event.title %></h1>
+    </section>
+
+    <div class="event_description">
+      <h2><%= @event.description %></h2>
+    </div>
+
+    <h3>L'Eventt aura lieu à <%= @event.place %></h3>
+    <h3> Le <%= @event.date %> </h3>
+
+    <br />
+
+    <%  if @event.creator.id == current_user.id %>
+      <%= link_to "Modifier", edit_event_path, class: "btn btn-primary" %>
+      <%= link_to "Supprimer", event_path, method: :delete, class: "btn btn-danger" %>
+    <%end%>
+    <% if @event.attendees.include? current_user %>
+      <%= link_to "Ne plus participer", { :controller => "events", :action => "unfollow"}, class: "btn btn-danger" %>
+    <% else %>
+      <%= link_to "Participer", { :controller => "events", :action => "participe"}, class: "btn btn-success" %>
+    <% end %>
+<br>
+
+    <h2>Liste des participants à l'Event</h2>
+
+    <table class="table table-hover">
+      <tr>
+        <th>Nom des Participants:</th>
+        <th>email:</th>
+        <th>Profil:</th>
+      </tr>
+
+      <%@event.attendees.each do |attendee|%>
+        <tr>
+          <td><%= attendee.name %></td>
+          <td><%= attendee.email %></td>
+          <td> <%= link_to('Voir le profil', user_path(attendee)) %> </td>
+        </tr>
+      <%end%>
+    </table>
+
+</div>
+<div class="Retour_index">
+  <%= link_to("Retour aux Events", events_path, class: "btn btn-primary" )%>
+</div>

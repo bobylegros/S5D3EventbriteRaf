@@ -7,8 +7,12 @@
   <h2>Salut <%= @user.name.capitalize %></h2>
   <h4>Mon email:   <%= @user.email %></h4>
   </br>
-  <%  if @user.id == current_user.id %>
+  <% if @user.id == current_user.id %>
     <%= link_to("Modifier", edit_user_path, class: "btn btn-success" ) %></h3>
+  </br>
+  </br>
+    <%= link_to("Céer mon Event", new_event_path, class: "btn btn-success" ) %></h3>
+
   <%end%>
 
 </div>
