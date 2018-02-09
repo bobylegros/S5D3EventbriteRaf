@@ -1,0 +1,17 @@
+<% if !logged_in? %>
+
+<div class="center jumbotron">
+<h1>Bienvenue</h1>
+
+<p>
+  Je me connecte <%= link_to("Login .", login_path, class: "btn btn-primary" ) %>
+</p>
+<p>
+  Je m'inscris <%= link_to("SignUp", signup_path, class: "btn btn-success" ) %>
+</p>
+
+</div>
+<% else %>
+  <div class="center jumbotron">
+  <h1>Bienvenue </h1>
+<% end %>
