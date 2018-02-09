@@ -1,12 +1,14 @@
 <div class="container">
-  <center>
-    <h1>Mon Profile</h1>
 
-    <h3>Hi <%= @user.name.capitalize %></h3>
-    <h3>Your email is:</h3><%= @user.email %>
-    <%  if @user.id == current_user.id %>
-      <%= link_to 'Modifier', edit_user_path %>
-    <%end%>
-    </br>
-  </center>
+  <h1>Mon Profile</h1>
+  </br>
+  </br>
+  </br>
+  <h2>Salut <%= @user.name.capitalize %></h2>
+  <h4>Mon email:   <%= @user.email %></h4>
+  </br>
+  <%  if @user.id == current_user.id %>
+    <%= link_to("Modifier", edit_user_path, class: "btn btn-success" ) %></h3>
+  <%end%>
+
 </div>

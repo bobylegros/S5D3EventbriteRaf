@@ -1,0 +1,41 @@
+<h1>Céez votre Event</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+      <%= form_for(@event) do |f| %>
+
+  <br />
+        <%= f.label :Titre %>
+        <%= f.text_field :title, class: 'form-control' %>
+  <br />
+        <%= f.label :Description %>
+        <%= f.text_area :description, class: 'form-control' %>
+  <br />
+        <%= f.label :"Date de l'event" %>
+  <br />
+        <%= f.date_field :date, class: 'form-control' %>
+  <br />
+  <br />
+        <%= f.label :"Lieu" %>
+        <%= f.text_field :place, class: 'form-control' %>
+
+
+        <br><br>
+        <%= f.submit "Créer votre event", class: "btn btn-success" %>
+      <% end %>
+
+  </div>
+</div>
+
+
+<div class="container">
+
+  <h1>Sign Up</h1>
+  <%= form_for @user do |f| %>
+    <h3>Nom de l'Event</h3><%= f.text_field :title%>
+    <h3>Description</h3><%= f.text_area :description %>
+    <h3>Date</h3><%= f.date_field :date %>
+    <h3>Lieu</h3><%= f.text_field :place %>
+    <%= f.submit "Create" %>
+  <% end %>
+</div>
