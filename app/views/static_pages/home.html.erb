@@ -6,11 +6,11 @@
     </br>
     </br>
 
-    <h3>Je me connecte <%= link_to("Login .", login_path, class: "btn btn-success" ) %></h3>
+    <h3>Je me connecte <%= link_to("Login", login_path, class: "btn btn-success" ) %></h3>
 
-    <h3>Je m'inscris<%= link_to("SignUp", signup_path, class: "btn btn-success" ) %></h3>
+    <h3>Je m'inscris <%= link_to("SignUp", signup_path, class: "btn btn-success" ) %></h3>
 
-    <h3>Events<%= link_to("Index", all_events_path, class: "btn btn-success" ) %></h3>
+    <h3>Events <%= link_to("Index", all_events_path, class: "btn btn-success" ) %></h3>
   </div>
 <% else %>
   <div class="center jumbotron">
