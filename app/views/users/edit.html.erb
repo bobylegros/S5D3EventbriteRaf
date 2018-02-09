@@ -1,27 +1,33 @@
-<h1>Mettre à jour mon profil</h1>
 
-<div class="row">
+<div class="container">
+  <h1>Mettre à jour mon profil</h1>
+
   <div class="col-md-6">
     <%= form_for(current_user) do |f| %>
 
       <p>
-        <%= f.label :name %>
-      </p>
+        <h3>Nom:</h3>
         <%= f.text_field :name, class: 'form-control' %>
-      <p>
-        <%= f.label :email %>
       </p>
+    </br>
+      <p>
+        <h3>Email:</h3>
         <%= f.text_field :email, class: 'form-control' %>
-      <p>
-        <%= f.label :password %>
       </p>
+    </br>
+      <p>
+        <h3>Password:</h3>
         <%= f.password_field :password, class: 'form-control' %>
-      <p>
-        <%= f.label :password_confirmation, "Confirmation" %>
       </p>
+    </br>
+      <p>
+        <h3>Confirmation:</h3>
         <%= f.password_field :password_confirmation, class: 'form-control' %>
+      </p>
 
-      <br><br>
+
+    </br>
+    </br>
 
       <%= f.submit "Modifier les informations", class: "btn btn-success" %>
     <% end %>

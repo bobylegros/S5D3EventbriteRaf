@@ -6,10 +6,10 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <%= form_for(@event) do |f| %>
-          <h3>Nom de l'Event</h3><%= f.text_field :title%>
-          <h3>Description</h3><%= f.text_area :description %>
-          <h3>Date</h3><%= f.date_field :date %>
-          <h3>Lieu</h3><%= f.text_field :place %>
+          <h3>Nom de l'Event:</h3><%= f.text_field :title%>
+          <h3>Description:</h3><%= f.text_area :description %>
+          <h3>Date:</h3><%= f.date_field :date %>
+          <h3>Lieu:</h3><%= f.text_field :place %>
           </br>
           </br>
           <%= f.submit "Créer mon Event", class: "btn btn-success" %>

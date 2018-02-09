@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Modifier mon Event</h1>
+
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(current_user) do |f| %>
+
+      <p>
+        <h3>Titre:</h3>
+        <%= f.text_field :title, class: 'form-control' %>
+      </p>
+    </br>
+      <p>
+        <h3>Description:</h3>
+        <%= f.text_area :description, class: 'form-control' %>
+      </p>
+    </br>
+      <p>
+        <h3>Date:</h3>
+        <%= f.date_field :date, class: 'form-control' %>
+      </p>
+    </br>
+      <p>
+        <h3>Lieu:</h3>
+        <%= f.text_field :place, class: 'form-control' %>
+      </p>
+    </br>
+    </br>
+        <%= f.submit "Modifier votre event", class: "btn btn-success" %>
+        <%= link_to("Supprimer l'Event", event_path, method: :delete, class: "btn btn-danger") %>
+
+    <% end %>
+  </div>
+</div>

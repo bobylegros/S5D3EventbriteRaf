@@ -1,0 +1,29 @@
+<strong><h2>Tous les Events</h2></strong>
+
+<table class="table table-hover">
+  <tr>
+    <th>Titre</th>
+    <th>Description</th>
+    <th>Date</th>
+    <th>Lieu</th>
+    <% if logged_in? %>
+      <th>créé par</th>
+      <th>Action</th>
+      <th>Participants</th>
+    <%end%>
+  </tr>
+
+  <%@events.each do |event|%>
+    <tr>
+      <td><%= event.title %></td>
+      <td><%= event.description %></td>
+      <td><%= event.date %></td>
+      <td><%= event.place %></td>
+      <% if logged_in? %>
+        <td><%=link_to(event.creator.name, user_path(event.creator.id))%></td>
+        <td><%=link_to("Voir", event_path(event.creator.id))%></td>
+        <td><%=link_to(event.attendees.size, event_path(event.creator.id))%></td>
+      <% end %>
+    </tr>
+  <%end%>
+</table>
