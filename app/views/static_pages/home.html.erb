@@ -10,9 +10,7 @@
 
     <h3>Je m'inscris<%= link_to("SignUp", signup_path, class: "btn btn-success" ) %></h3>
 
-    <p>
-      Liste de tous les Events RAJOUTER LE LIEN
-    </p>
+    <h3>Events<%= link_to("Index", all_events_path, class: "btn btn-success" ) %></h3>
   </div>
 <% else %>
   <div class="center jumbotron">
@@ -25,5 +23,8 @@
     </br>
     </br>
     <%= link_to("Céer mon Event", new_event_path, class: "btn btn-success" ) %></h3>
+    </br>
+    </br>
+    <%= link_to("Voir tous les Events", all_events_path, class: "btn btn-success" ) %></h3>
   </div>
 <% end %>
