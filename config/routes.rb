@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 #static_pages
   root 'static_pages#home'
   get 'static_pages/home'
+  get 'static_pages/bonus'
 #Events
 get 'events/:id/participe/', to: 'events#participe'
 get 'events/:id/unfollow', to: 'events#unfollow'
